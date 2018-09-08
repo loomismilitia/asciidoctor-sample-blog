@@ -1,3 +1,5 @@
+:source-highlighter: coderay
+
 = Asciidoctor Sample Blog
 Asciidoctor Sample Blog
 

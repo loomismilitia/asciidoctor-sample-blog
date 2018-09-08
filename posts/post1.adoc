@@ -1,3 +1,5 @@
+:source-highlighter: coderay
+
 = First post
 
 // tag::summary[]
@@ -28,3 +30,22 @@ Ut malesuada sollicitudin malesuada. Maecenas pretium euismod risus. Donec vel n
 Phasellus feugiat elementum est, vel ullamcorper nisi ullamcorper vitae. Maecenas auctor neque id mauris aliquam rhoncus.
 Phasellus eleifend, augue at accumsan rhoncus, nibh eros tincidunt leo, ac euismod risus diam vitae orci. Cras mi risus,
 auctor at posuere in, euismod malesuada elit.
+
+[source,java,indent=0]
+----
+	public interface TransactionStatus extends SavepointManager {
+
+		boolean isNewTransaction();
+
+		boolean hasSavepoint();
+
+		void setRollbackOnly();
+
+		boolean isRollbackOnly();
+
+		void flush();
+
+		boolean isCompleted();
+
+	}
+----

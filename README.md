@@ -27,6 +27,27 @@ gem install asciidoctor
 asciidoctor --destination-dir web **/*.adoc
 ```
 
+
+## Add CodeRay syntax highlighter
+
+In order to use CodeRay with Asciidoctor, you need the coderay RubyGem. You can use one of the following methods to install CodeRay.
+
+Install using gem (all systems)
+```
+gem install coderay
+``` 
+
+Verify `coderay`installation:
+```
+coderay -v 
+```
+
+Assign the coderay value to the source-highlighter attribute in the document header to activate it.
+```
+:source-highlighter: coderay
+```
+
+
 ## References
 
 [Asciidoctor](https://asciidoctor.org/)
