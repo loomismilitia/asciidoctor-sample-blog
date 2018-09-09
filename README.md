@@ -26,6 +26,10 @@ gem install asciidoctor
 ```
 asciidoctor --destination-dir web **/*.adoc
 ```
+To include content from a URI the attribute `allow-uri-read`must be specified. More details can be found on [Include Content from a URI](##include-content-from-a-URI) section.
+```
+asciidoctor -a allow-uri-read --destination-dir web **/*.adoc
+```
 
 
 ## Add CodeRay syntax highlighter
@@ -47,6 +51,23 @@ Assign the coderay value to the source-highlighter attribute in the document hea
 :source-highlighter: coderay
 ```
 
+
+## Include content from a URI 
+The include directive recognizes when the target is a URI and can include the content referenced by that URI.
+
+This example demonstrates how to include an AsciiDoc file from a GitHub repo directly into your document.
+```
+include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/master/README.adoc[]
+```
+For security reasons, this capability is not enabled by default. To allow content to be read from a URI, you must enable the URI read permission by:
+
+running Asciidoctor in SERVER mode or less and setting the allow-uri-read attribute securely (i.e., from the CLI or API).
+
+Here’s an example that shows how to run Asciidoctor from the console so it can read content from a URI:
+
+```
+asciidoctor -a allow-uri-read filename.adoc
+```
 
 ## References
 
